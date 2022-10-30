@@ -4,20 +4,20 @@
 #1)Add pip to Environment Variables 
 #    This PC -> Properties -> Advanced System Settings -> Environment Variables ->
 #    on System variables clik on Path and then Edit -> New ->
-#    Copy/Paste the path where pip exist (C:\Users\George Georgariou\source\repos\ClusteringDocApp\ClusteringDocApp\VirtualEnvironmentClustDoc\Scripts)
+#    Copy/Paste the path where pip exist (C:\Users\George Georgariou\source\repos\PythonApp_DocumentsClustering\PythonApp_DocumentsClustering\VirtualEnv_DocClust\Scripts)
 #2)pip install -U pip setuptools wheel
 #3)pip install -U spacy
 
 #Download trained pipelines (en_core_web_sm, el_core_news_sm)
 #Open terminal here: View -> Terminal
-#python -m spacy download en_core_web_sm
-#python -m spacy download el_core_news_sm
+#python -m spacy download en_core_web_lg
+#python -m spacy download el_core_news_lg
 
 import spacy
 
 #Language object containing all components and data needed to process text.
-nlp = spacy.load('en_core_web_sm')
-nlpGr = spacy.load('el_core_news_sm')
+nlp = spacy.load('en_core_web_lg')
+nlpGr = spacy.load('el_core_news_lg')
 
 #Calling the nlp object on a string of text will return a processed Doc object-container
 doc = nlp("Apple is looking at buying U.K. startup for $1 billion ?. Hellow Worlds")
@@ -42,9 +42,11 @@ for sent in doc.sents:
 #After tokenization, spaCy can parse and tag a given Doc. This is where the trained pipeline and 
 #its statistical models come in, which enable spaCy to make predictions of which tag or label 
 #most likely applies in this context.
-#for token in doc:
-#    print(token.text,token.lang_, token.lemma_, token.pos_, token.tag_, token.dep_,
-#            token.shape_, token.is_alpha, token.is_stop)
+'''
+for token in doc:
+    print(token.text,token.lang_, token.lemma_, token.pos_, token.tag_, token.dep_,
+            token.shape_, token.is_alpha, token.is_stop)
+'''
 
 # A named entity is a real world object thats assigned a name for example, a person, acountry
 # a products or a book title. SpaCy can recognize various types of a named entity in a document
@@ -57,9 +59,6 @@ for ent in doc.ents:
 spacy.displacy.serve(doc, style="ent") #browser -> http://localhost:5000/
 '''
 
-
-# Import Large model
-nlp = spacy.load('en_core_web_lg')
 
 # Token Word vectors - embeddings
 '''
@@ -76,7 +75,7 @@ for token in doc:
 doc = nlp("Hello Hi")
 word1 = doc[0]
 word2 = doc[1]
-print(f"Words similarity: {word1.similarity(word2)}")
+print(f"Words-Tokens similarity: {word1.similarity(word2)}")
 '''
 
 
