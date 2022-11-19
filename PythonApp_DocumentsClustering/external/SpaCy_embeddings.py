@@ -28,8 +28,8 @@ for token in doc:
     print(token.text, token.pos_, token.dep_)
 '''
 
-# Doc container-object containes sents attribute (sentences of a document)
-# where each sent in sents has token attribute
+# Doc container-object containes sents attributes (sentences of a document)
+# where each sent in sents has tokens as attributes
 '''
 print(f'Document: {doc}')
 for sent in doc.sents:

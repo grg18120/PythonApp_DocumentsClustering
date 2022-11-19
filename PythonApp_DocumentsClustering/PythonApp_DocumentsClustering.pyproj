@@ -5,8 +5,7 @@
     <ProjectGuid>cf5f311c-444b-4509-8833-6e7481cfd14e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>PythonApp_DocumentsClustering.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <SearchPath>external</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>PythonApp_DocumentsClustering</Name>
@@ -22,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="external\UMAP.py" />
     <Compile Include="external\SpaCy_embeddings.py" />
     <Compile Include="external\TFIDF_TfidfTransformer_CountVectorizer.py" />
     <Compile Include="external\TFIDF_TfidfVectorizer.py" />
