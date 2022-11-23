@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="external\Ext_Evaluation_Metrics.py" />
+    <Compile Include="external\K_MEANS.py" />
     <Compile Include="external\UMAP.py" />
     <Compile Include="external\SpaCy_embeddings.py" />
     <Compile Include="external\TFIDF_TfidfTransformer_CountVectorizer.py" />
