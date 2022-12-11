@@ -28,6 +28,21 @@ for token in doc:
     print(token.text, token.pos_, token.dep_)
 '''
 
+
+def useful_token(token):
+    """
+    Keep useful tokens which have 
+       - Part Of Speech tag (POS): ['NOUN','PROPN','ADJ']
+       - Alpha(token is word): True
+       - Stop words(is, the, at, ...): False
+    """
+    return token.pos_ in ['NOUN','PROPN','ADJ'] and token.is_alpha and not token.is_stop 
+
+usefull_tokens_list = [token for token in doc if useful_token(token)]
+usefull_tokens_generator = (token for token in doc if token.pos_ in useful_token(token))
+usefull_tokens_set = {token for token in doc if token.pos_ in useful_token(token)}
+
+
 # Doc container-object containes sents attributes (sentences of a document)
 # where each sent in sents has tokens as attributes
 '''
